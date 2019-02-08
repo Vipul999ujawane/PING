@@ -2,16 +2,14 @@
 PING : Professor Information Gatherer\
 The quickest solution to gather Professor Information for Research Interns
 ## Getting Started
-### Prerequisites
-* BeautifulSoup  
-* Requests
-#### Installation
-[Requests](http://docs.python-requests.org/en/master/user/install/)  
-[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)
+#### Installation and Run
 ```
 git clone https://github.com/Vipul999ujawane/PING
-cd PING/ping
+cd PING
+sudo pip3 install -r requirements.txt
+python3 main.py
 ```
+* Before Running, create a keywords.txt file with a new keyword on each line
 ## What does PING do :
 PING returns the following:
 #### Already Implemented
