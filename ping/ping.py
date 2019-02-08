@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from urls import PROF_URl,HOME_URL
+from ping.urls import PROF_URl,HOME_URL
 import re
 
 class Ping:
@@ -116,34 +116,3 @@ class Ping:
             title=None
             link=None
         return (title,link)
-
-if(__name__ == "__main__"):
-    ping1 = Ping("xDL-rrsAAAAJ")
-    print(ping1.name)
-    print(ping1.university)
-    print(ping1.job)
-    print(ping1.h_index)
-    print(ping1.homepage)
-    print(ping1.tags)
-    print(ping1.get_recent_paper())
-    print(ping1.get_most_cited())
-    print("----------------------")
-    ping2 = Ping("k3BxbM4AAAAJ")
-    print(ping2.name)
-    print(ping2.university)
-    print(ping2.job)
-    print(ping2.h_index)
-    print(ping2.homepage)
-    print(ping2.tags)
-    print(ping2.get_recent_paper())
-    print(ping2.get_most_cited())
-    print("----------------------")
-    ping3 = Ping("mbaG-mQAAAAJ")
-    print(ping3.name)
-    print(ping3.university)
-    print(ping3.job)
-    print(ping3.h_index)
-    print(ping3.homepage)
-    print(ping3.tags)
-    print(ping3.get_recent_paper())
-    print(ping3.get_most_cited())
