@@ -10,7 +10,7 @@ class Ping:
     job = ""
     h_index=""
     homepage=""
-
+    tags=[]
     def __init__(self,id):
         params = {"user":id}
         r = requests.get(PROF_URl,params=params)
@@ -20,6 +20,7 @@ class Ping:
         self.job=self.get_job()
         self.h_index = self.get_h_index()
         self.homepage = self.get_homepage()
+        self.tags=self.get_tags()
 
     def get_name(self):
         page = self.html
@@ -62,6 +63,17 @@ class Ping:
         except (AttributeError,TypeError):
             homepage=None
         return homepage
+    
+    def get_tags(self):
+        page = self.html
+        tags=[]
+        try:
+            tags_tag=page.find_all("a",{"class":"gsc_prf_inta gs_ibl"})
+            for tag in tags_tag:
+                tags.append(tag.text)
+        except:
+            tags = []
+        return tags
 
 if(__name__ == "__main__"):
     ping1 = Ping("xDL-rrsAAAAJ")
@@ -70,6 +82,7 @@ if(__name__ == "__main__"):
     print(ping1.job)
     print(ping1.h_index)
     print(ping1.homepage)
+    print(ping1.tags)
     print("----------------------")
     ping2 = Ping("k3BxbM4AAAAJ")
     print(ping2.name)
@@ -77,6 +90,7 @@ if(__name__ == "__main__"):
     print(ping2.job)
     print(ping2.h_index)
     print(ping2.homepage)
+    print(ping2.tags)
     print("----------------------")
     ping3 = Ping("mbaG-mQAAAAJ")
     print(ping3.name)
@@ -84,3 +98,4 @@ if(__name__ == "__main__"):
     print(ping3.job)
     print(ping3.h_index)
     print(ping3.homepage)
+    print(ping3.tags)
