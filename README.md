@@ -3,10 +3,10 @@ PING : Professor Information Gatherer\
 The quickest solution to gather Professor Information for Research Interns
 ## Getting Started
 ### Prerequisites
-* BeautifulSoup\
+* BeautifulSoup  
 * Requests
 #### Installation
-[Requests](http://docs.python-requests.org/en/master/user/install/)
+[Requests](http://docs.python-requests.org/en/master/user/install/)  
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)
 ```
 git clone https://github.com/Vipul999ujawane/PING
