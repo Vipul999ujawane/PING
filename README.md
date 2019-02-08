@@ -7,9 +7,11 @@ The quickest solution to gather Professor Information for Research Interns
 git clone https://github.com/Vipul999ujawane/PING
 cd PING
 sudo pip3 install -r requirements.txt
+```
+* Now create a keywords.txt file stating all the search keywords on a new line
+```
 python3 main.py
 ```
-* Before Running, create a keywords.txt file with a new keyword on each line
 ## What does PING do :
 PING returns the following:
 #### Already Implemented
