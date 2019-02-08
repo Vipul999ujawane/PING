@@ -1,9 +1,9 @@
 # PING
-PING : Professor Information Gatherer
+PING : Professor Information Gatherer\
 The quickest solution to gather Professor Information for Research Interns
 ## Getting Started
 ### Prerequisites
-* BeautifulSoup
+* BeautifulSoup\
 * Requests
 #### Installation
 [Requests](http://docs.python-requests.org/en/master/user/install/)
@@ -20,8 +20,9 @@ PING returns the following:
 * Professor Institute
 * Professor Tags
 * Professor H-Index
-#### TODO
 * Top Cited Paper Links
 * Most Recent Paper Links
+#### TODO
 * Saving Data to a external Format
-* Matching Algorithm for suitable matches 
+* Searching for professor
+* Matching Algorithm 
