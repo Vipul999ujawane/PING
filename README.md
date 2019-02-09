@@ -23,6 +23,8 @@ PING returns the following:
 * Top Cited Paper Links
 * Most Recent Paper Links
 * Searching for professor
-#### TODO
 * Saving Data to a external Format
-* Matching Algorithm 
+* Cookie Maintenance using browser to validate Captcha
+#### TODO
+* Result Ranking Algorithm
+* Custom Number of Results
