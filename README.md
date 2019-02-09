@@ -3,6 +3,7 @@ PING : Professor Information Gatherer\
 The quickest solution to gather Professor Information for Research Interns
 ## Getting Started
 #### Installation and Run
+* Visit Google Scholar before First Run on Google Chrome
 ```
 git clone https://github.com/Vipul999ujawane/PING
 cd PING
