@@ -22,7 +22,7 @@ PING returns the following:
 * Professor H-Index
 * Top Cited Paper Links
 * Most Recent Paper Links
+* Searching for professor
 #### TODO
 * Saving Data to a external Format
-* Searching for professor
 * Matching Algorithm 
