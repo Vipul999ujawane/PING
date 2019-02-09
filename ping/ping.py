@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from ping.urls import PROF_URl,HOME_URL
 import re
+from pycookiecheat import chrome_cookies
 
 class Ping:
     id=""
@@ -15,7 +16,8 @@ class Ping:
     def __init__(self,id):
         self.id = id
         params = {"user":id}
-        r = requests.get(PROF_URl,params=params)
+        cookies=chrome_cookies(PROF_URl)
+        r = requests.get(PROF_URl,params=params,cookies=cookies)
         self.html = BeautifulSoup(r.content,"html.parser")
         self.name = self.get_name()
         self.university=self.get_university()
