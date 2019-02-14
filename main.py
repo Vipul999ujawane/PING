@@ -55,6 +55,7 @@ if(__name__ == "__main__"):
     ws.write(0, 3, "Homepage")
     ws.write(0, 4, "H-Index")
     ws.write(0, 5, "Labels")
+    ws.write(0,6,"Google Scholar Link")
     iterator = 1
     for id in final_id:
         ping = Ping(id)
@@ -62,8 +63,9 @@ if(__name__ == "__main__"):
         ws.write(iterator, 0, ping.name)
         ws.write(iterator, 1, ping.job)
         ws.write(iterator, 2, ping.university)
-        ws.write(iterator, 3, ping.homepage)
+        ws.write(iterator, 3, xlwt.Formula('HYPERLINK("%s";"HOMEPAGE")'%ping.homepage))
         ws.write(iterator, 4, str(ping.h_index))
         ws.write(iterator, 5, str(ping.tags))
+        ws.write(iterator, 6, xlwt.Formula('HYPERLINK("%s";"GOOGLE SCHOLAR")'%ping.gs_link))
         iterator += 1
     wb.save("Data.xls")

@@ -12,6 +12,7 @@ class Ping:
     job = ""
     h_index=""
     homepage=""
+    gs_link=""
     tags=[]
     def __init__(self,id):
         self.id = id
@@ -25,6 +26,7 @@ class Ping:
         self.h_index = self.get_h_index()
         self.homepage = self.get_homepage()
         self.tags=self.get_tags()
+        self.gs_link = r.url
 
     def get_name(self):
         page = self.html
