@@ -26,6 +26,6 @@ PING returns the following:
 * Searching for professor
 * Saving Data to a external Format
 * Cookie Maintenance using browser to validate Captcha
+* Custom Number of Results
 #### TODO
 * Result Ranking Algorithm
-* Custom Number of Results
