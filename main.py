@@ -32,7 +32,7 @@ def main():
         for word in keywords:
             print("[*] Searching for keyword: "+word)
             print("[+] Searching Professors")
-            ids = get_prof_ids(keyword=word,num_page=2)
+            ids = get_prof_ids(keyword=word,num_page=2, strict=True)
             print(("[+] Found {0} Professor for Keyword {1}").format(ids.__len__(),word))
             # time.sleep((30-5)*np.random.random()+5)
             # Use this to prevent flagging. Makes code slower but safe to use.

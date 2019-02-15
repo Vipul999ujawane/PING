@@ -27,6 +27,7 @@ PING returns the following:
 * Saving Data to a external Format
 * Cookie Maintenance using browser to validate Captcha
 * Custom Number of Results
+* Two Modes of Search : Strict and Lenient
 #### TODO
 * Result Ranking Algorithm
 

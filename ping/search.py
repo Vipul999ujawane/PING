@@ -8,13 +8,16 @@ from pycookiecheat import chrome_cookies
 from ping.urls import HOME_URL, PROF_URl
 import ping.ping
 
-def get_prof_ids(keyword, url=PROF_URl, num_page = 1):
+def get_prof_ids(keyword, url=PROF_URl, num_page = 1, strict = True):
     if(num_page==0):
         return []
     ids = []
     cookies = chrome_cookies(HOME_URL)
     if(url == PROF_URl):
-        params = {"view_op": "search_authors", "mauthors": ("{0}").format(keyword)}
+        if(strict==True):
+            params = {"view_op": "search_authors", "mauthors": ("label:{0}").format(keyword)}
+        else:
+            params = {"view_op": "search_authors", "mauthors": ("{0}").format(keyword)}
         r = requests.get(url, params=params, cookies=cookies)
     else:
         r = requests.get(url,cookies=cookies)
