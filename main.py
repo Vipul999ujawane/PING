@@ -21,39 +21,52 @@ def get_keywords():
     return keywords
 
 
-if(__name__ == "__main__"):
-    print("[*] Ping Started")
-    keywords = get_keywords()
-    final_id = set()
-    print(("[+] {0} Keywords Acquired").format(keywords.__len__()))
-    for word in keywords:
-        print("[*] Searching for keyword: "+word)
-        print("[+] Searching Proffessors")
-        ids = get_prof_ids(keyword=word,num_page=2)
-        # time.sleep((30-5)*np.random.random()+5)
-        # Use this to prevent flagging. Makes code slower but safe to use.
-        for id in ids:
-            final_id.add(id)
-    wb = xlwt.Workbook()
-    ws = wb.add_sheet("Sheet 1")
-    ws.write(0, 0, "Name")
-    ws.write(0, 1, "Job")
-    ws.write(0, 2, "University")
-    ws.write(0, 3, "Homepage")
-    ws.write(0, 4, "H-Index")
-    ws.write(0, 5, "Labels")
-    ws.write(0,6,"Google Scholar Link")
-    iterator = 1
-    for id in final_id:
-        ping = Ping(id)
-        print(("[+] Professor {0}").format(ping.name))
-        ws.write(iterator, 0, ping.name)
-        ws.write(iterator, 1, ping.job)
-        ws.write(iterator, 2, ping.university)
-        ws.write(iterator, 3, xlwt.Formula('HYPERLINK("%s";"HOMEPAGE")'%ping.homepage))
-        ws.write(iterator, 4, str(ping.h_index))
-        ws.write(iterator, 5, str(ping.tags))
-        ws.write(iterator, 6, xlwt.Formula('HYPERLINK("%s";"GOOGLE SCHOLAR")'%ping.gs_link))
-        iterator += 1
-    wb.save("Data.xls")
-    print("[*] Data Saved to Data.xls")
+def main():
+    try:
+        print("[*] Ping Started")
+        keywords = get_keywords()
+        final_id = set()
+        print(("[+] {0} Keywords Acquired").format(keywords.__len__()))
+        for word in keywords:
+            print("[*] Searching for keyword: "+word)
+            print("[+] Searching Professors")
+            ids = get_prof_ids(keyword=word,num_page=2)
+            print(("[+] Found {0} Professor for Keyword {1}").format(ids.__len__(),word))
+            # time.sleep((30-5)*np.random.random()+5)
+            # Use this to prevent flagging. Makes code slower but safe to use.
+            for id in ids:
+                final_id.add(id)
+        print(("[*] Found {} Professors for all keywords").format(final_id.__len__()))
+        wb = xlwt.Workbook()
+        ws = wb.add_sheet("Sheet 1")
+        ws.write(0, 0, "Name")
+        ws.write(0, 1, "Job")
+        ws.write(0, 2, "University")
+        ws.write(0, 3, "Homepage")
+        ws.write(0, 4, "H-Index")
+        ws.write(0, 5, "Labels")
+        ws.write(0,6,"Google Scholar Link")
+        iterator = 1
+        for id in final_id:
+            ping = Ping(id)
+            print(("[+] Collecting Data for Professor {0}").format(ping.name))
+            ws.write(iterator, 0, ping.name)
+            ws.write(iterator, 1, ping.job)
+            ws.write(iterator, 2, ping.university)
+            if(ping.homepage==None):
+                ws.write(iterator, 3, "N/A")
+            else:    
+                ws.write(iterator, 3, xlwt.Formula('HYPERLINK("%s";"HOMEPAGE")'%ping.homepage))
+            ws.write(iterator, 4, str(ping.h_index))
+            ws.write(iterator, 5, str(ping.tags))
+            ws.write(iterator, 6, xlwt.Formula('HYPERLINK("%s";"GOOGLE SCHOLAR")'%ping.gs_link))
+            iterator += 1
+        wb.save("Data.xls")
+        print("[*] Data Saved to Data.xls")
+    except ImportError:
+        print("[!] Please Install All Prerequisites")
+    except:
+        print("[!] Error Occured. Code Exiting")
+
+if(__name__=="__main__"):
+    main()
