@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from pycookiecheat import chrome_cookies
 
 from ping.ping import Ping
-from ping.search import get_prof_ids, sort_profs
+from ping.search import get_prof_ids, sort_profs, create_xls
 from ping.urls import HOME_URL, PROF_URl
 
 
@@ -45,10 +45,11 @@ def main():
             print(("[+] Collecting Data for Professor {0}").format(ping.name))
             prof_list.append(ping)     
         sort_profs(prof_list = prof_list,keywords = keywords)
+        create_xls(prof_list)
     except ImportError:
         print("[!] Please Install All Prerequisites")
-    except:
-        print("[!] Error Occured. Code Exiting")
+    except  (Exception,KeyboardInterrupt):
+        print("[!] Error Occured. Code Exiting : {0}".format (type(Exception).__name__))
 
 if(__name__=="__main__"):
     main()
