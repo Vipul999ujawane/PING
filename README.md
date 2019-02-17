@@ -60,7 +60,9 @@ PING returns the following:
 * [x] Two Modes of Search : Strict and Lenient
 
 * [ ] Result Ranking Algorithm
+
 * [ ] Better Command Line Interfacing through Flags
+
 * [ ] Country Based Results 
 
   
