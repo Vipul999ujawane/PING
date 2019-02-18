@@ -21,12 +21,26 @@ sudo pip3 install -r requirements.txt
 
 ```
 
-* Now create a keywords.txt file stating all the search keywords on a new line
+* Now create a file stating all the search keywords on a new line
 
 ```
 
-python3 main.py
+./main.py [File Input] [File Output]
 
+```
+Use -h for more info.
+```
+./main.py -h
+usage: main.py [-h] [-s] [-n NUMBER] file output
+
+positional arguments:
+  file                  Input File for Keywords
+  output                Output File for xls. Must ends with a .xls
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s, --strict          Use search in the strict mode
+  -n NUMBER, --number NUMBER
 ```
 
 ## What does PING do :
@@ -36,36 +50,20 @@ PING returns the following:
 #### Project Update
 
 * [x] Professor Name
-
 * [x] Professor Title
-
 * [x] Professor Institute
-
 * [x] Professor Tags
-
 * [x] Professor H-Index
-
 * [x] Top Cited Paper Links
-
 * [x] Most Recent Paper Links
-
 * [x] Searching for professor
-
 * [x] Saving Data to a external Format
-
 * [x] Cookie Maintenance using browser to validate Captcha
-
 * [x] Custom Number of Results
-
 * [x] Two Modes of Search : Strict and Lenient
-
 * [ ] Result Ranking Algorithm
-
 * [x] Better Command Line Interfacing through Flags
-
 * [ ] Country Based Results 
-
-  
 
 ## Issues
 
