@@ -49,7 +49,7 @@ def sort_profs(prof_list,keywords):
         jaccard_similarity = get_jaccard_coefficient(i.tags,keywords)
         print("[*] Prof : {0} | Jaccard Similarity : {1}".format(i.name,jaccard_similarity))        
 
-def create_xls(prof_list):
+def create_xls(prof_list,filename):
     wb = xlwt.Workbook()
     ws = wb.add_sheet("Sheet 1")
     ws.write(0, 0, "Name")
@@ -72,5 +72,5 @@ def create_xls(prof_list):
         ws.write(iterator, 5, str(i.tags))
         ws.write(iterator, 6, xlwt.Formula('HYPERLINK("%s";"GOOGLE SCHOLAR")'%i.gs_link))
         iterator += 1
-    wb.save("Data.xls")
+    wb.save(filename)
     print("[*] Data Saved to Data.xls")
