@@ -61,7 +61,7 @@ PING returns the following:
 
 * [ ] Result Ranking Algorithm
 
-* [ ] Better Command Line Interfacing through Flags
+* [x] Better Command Line Interfacing through Flags
 
 * [ ] Country Based Results 
 
